@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\yassi\Desktop\brikolat\3D-Rendering-engine\third_party\glfw\build\CMakeFiles\ede5fab76c9dd4596c4cb142fe470f01\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{60AD036D-4024-340A-8E6B-DF5AEAD1F705}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

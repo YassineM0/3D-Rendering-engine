@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\yassi\Desktop\brikolat\3D-Rendering-engine\third_party\glfw\build\CMakeFiles\126cc0f5b2b91906431e57af09d4ec8d\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\yassi\Desktop\brikolat\3D-Rendering-engine\third_party\glfw\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\yassi\Desktop\brikolat\3D-Rendering-engine\third_party\glfw\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\yassi\Desktop\brikolat\3D-Rendering-engine\third_party\glfw\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\yassi\Desktop\brikolat\3D-Rendering-engine\third_party\glfw\build\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{60AD036D-4024-340A-8E6B-DF5AEAD1F705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0B661A5C-A842-3CD2-B637-23724DD4DE14}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

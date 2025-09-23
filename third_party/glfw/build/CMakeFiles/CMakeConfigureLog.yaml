@@ -1,0 +1,325 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.12.6+db5f6012c for .NET Framework
+      Build started 9/23/2025 11:54:36 PM.
+      
+      Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\3.31.0\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\3.31.0\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\3.31.0\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.93
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/3.31.0/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-6s8kxy"
+      binary: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-6s8kxy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-6s8kxy'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Preview/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c31f7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.6+db5f6012c for .NET Framework
+        Build started 9/23/2025 11:54:38 PM.
+        
+        Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s8kxy\\cmTC_c31f7.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_c31f7.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s8kxy\\Debug\\".
+          Creating directory "cmTC_c31f7.dir\\Debug\\cmTC_c31f7.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_c31f7.dir\\Debug\\cmTC_c31f7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_c31f7.dir\\Debug\\cmTC_c31f7.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c31f7.dir\\Debug\\\\" /Fd"cmTC_c31f7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34432 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c31f7.dir\\Debug\\\\" /Fd"cmTC_c31f7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s8kxy\\Debug\\cmTC_c31f7.exe" /INCREMENTAL /ILK:"cmTC_c31f7.dir\\Debug\\cmTC_c31f7.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-6s8kxy/Debug/cmTC_c31f7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-6s8kxy/Debug/cmTC_c31f7.lib" /MACHINE:X64  /machine:x64 cmTC_c31f7.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_c31f7.vcxproj -> C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s8kxy\\Debug\\cmTC_c31f7.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_c31f7.dir\\Debug\\cmTC_c31f7.tlog\\unsuccessfulbuild".
+          Touching "cmTC_c31f7.dir\\Debug\\cmTC_c31f7.tlog\\cmTC_c31f7.lastbuildstate".
+        Done Building Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s8kxy\\cmTC_c31f7.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.55
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.42.34432/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.42.34432/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.42.34432.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-tfq4rn"
+      binary: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-tfq4rn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-tfq4rn'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Preview/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6a11c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.6+db5f6012c for .NET Framework
+        Build started 9/23/2025 11:54:39 PM.
+        
+        Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\cmTC_6a11c.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_6a11c.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\Debug\\".
+          Creating directory "cmTC_6a11c.dir\\Debug\\cmTC_6a11c.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_6a11c.dir\\Debug\\cmTC_6a11c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_6a11c.dir\\Debug\\cmTC_6a11c.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6a11c.dir\\Debug\\\\" /Fd"cmTC_6a11c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34432 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6a11c.dir\\Debug\\\\" /Fd"cmTC_6a11c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\src.c"
+          src.c
+        C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\cmTC_6a11c.vcxproj]
+        Done Building Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\cmTC_6a11c.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\cmTC_6a11c.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tfq4rn\\cmTC_6a11c.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.41
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-blfz7h"
+      binary: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-blfz7h"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-blfz7h'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Preview/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_593ab.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.6+db5f6012c for .NET Framework
+        Build started 9/23/2025 11:54:40 PM.
+        
+        Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-blfz7h\\cmTC_593ab.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_593ab.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-blfz7h\\Debug\\".
+          Creating directory "cmTC_593ab.dir\\Debug\\cmTC_593ab.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_593ab.dir\\Debug\\cmTC_593ab.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_593ab.dir\\Debug\\cmTC_593ab.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_593ab.dir\\Debug\\\\" /Fd"cmTC_593ab.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-blfz7h\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34432 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_593ab.dir\\Debug\\\\" /Fd"cmTC_593ab.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-blfz7h\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-blfz7h\\Debug\\cmTC_593ab.exe" /INCREMENTAL /ILK:"cmTC_593ab.dir\\Debug\\cmTC_593ab.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-blfz7h/Debug/cmTC_593ab.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-blfz7h/Debug/cmTC_593ab.lib" /MACHINE:X64  /machine:x64 cmTC_593ab.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-blfz7h\\cmTC_593ab.vcxproj]
+        Done Building Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-blfz7h\\cmTC_593ab.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-blfz7h\\cmTC_593ab.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-blfz7h\\cmTC_593ab.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.42
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-a1zjcw"
+      binary: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-a1zjcw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-a1zjcw'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Preview/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3f276.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.6+db5f6012c for .NET Framework
+        Build started 9/23/2025 11:54:40 PM.
+        
+        Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a1zjcw\\cmTC_3f276.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_3f276.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a1zjcw\\Debug\\".
+          Creating directory "cmTC_3f276.dir\\Debug\\cmTC_3f276.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_3f276.dir\\Debug\\cmTC_3f276.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_3f276.dir\\Debug\\cmTC_3f276.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3f276.dir\\Debug\\\\" /Fd"cmTC_3f276.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a1zjcw\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34432 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3f276.dir\\Debug\\\\" /Fd"cmTC_3f276.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a1zjcw\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34432\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a1zjcw\\Debug\\cmTC_3f276.exe" /INCREMENTAL /ILK:"cmTC_3f276.dir\\Debug\\cmTC_3f276.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-a1zjcw/Debug/cmTC_3f276.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glfw/build/CMakeFiles/CMakeScratch/TryCompile-a1zjcw/Debug/cmTC_3f276.lib" /MACHINE:X64  /machine:x64 cmTC_3f276.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a1zjcw\\cmTC_3f276.vcxproj]
+        Done Building Project "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a1zjcw\\cmTC_3f276.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a1zjcw\\cmTC_3f276.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\yassi\\Desktop\\brikolat\\3D-Rendering-engine\\third_party\\glfw\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a1zjcw\\cmTC_3f276.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.41
+        
+      exitCode: 1
+...
