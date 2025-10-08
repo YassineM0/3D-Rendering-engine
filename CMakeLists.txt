@@ -16,6 +16,7 @@ include_directories(
     third_party/glad/include
     third_party/glm
     include/third_party
+    
     include
 )
 
