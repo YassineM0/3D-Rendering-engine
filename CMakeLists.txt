@@ -23,6 +23,7 @@ include_directories(
 
 add_executable(3D_Rendering_Engine
     src/main.cpp
+    src/Mesh.cpp
     third_party/glad/src/glad.c
 )
 

@@ -6,16 +6,22 @@
 
 struct Vertex {
     glm::vec3 position; 
-    glm::vec3 normal;
     glm::vec2 uv;   
 };
 
-struct Mesh {
+class Mesh {
+public:
+    unsigned int vao;
+
+    Mesh(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices);
+
+    void draw() const;
+
+private:
     std::vector<Vertex> vertices;
     std::vector<uint32_t> indices;
+    unsigned int vbo, ebo;
 
-    unsigned int vao = 0;
-    unsigned int vbo = 0;
-    unsigned int ebo = 0;
+    void setupMesh();
 
 };

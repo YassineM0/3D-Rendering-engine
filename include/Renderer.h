@@ -1,9 +1,10 @@
 #pragma once
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 #include "Scene.h"
-#include "Camera"
+#include "Camera.h"
 #include "Shader.h"
-#include <GLFW/glfw3.h>
 
 class Renderer {
 public:
@@ -16,5 +17,5 @@ public:
     bool init();
     void uploadMesh(Mesh& m);
     void render(const Scene& scene);
-    void shutDown();
-}
+    void shutdown();
+};

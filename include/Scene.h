@@ -9,5 +9,10 @@ struct SceneNode {
     std::string name;
     Mesh mesh;
     Material material;
-    glm::
-}
+    glm::mat4 trasform = glm::mat4(1.0f);
+    std::vector<SceneNode> children;
+};
+
+struct Scene {
+    std::vector<SceneNode> nodes;
+};
