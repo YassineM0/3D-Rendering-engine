@@ -11,8 +11,6 @@ struct Vertex {
 
 class Mesh {
 public:
-    unsigned int vao;
-
     Mesh(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices);
 
     void draw() const;
@@ -20,7 +18,7 @@ public:
 private:
     std::vector<Vertex> vertices;
     std::vector<uint32_t> indices;
-    unsigned int vbo, ebo;
+    unsigned int vbo, ebo, vao;
 
     void setupMesh();
 

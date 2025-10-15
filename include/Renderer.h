@@ -1,21 +1,25 @@
 #pragma once
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-
+#include <memory>
+#include <vector>
+#include "Mesh.h"
 #include "Scene.h"
 #include "Camera.h"
 #include "Shader.h"
 
 class Renderer {
 public:
-    GLFWwindow* window  = nullptr;
+    GLFWwindow* window = nullptr;
     int width = 1280, height = 720;
 
-    Shader shader;
-    Camera camera;
+    std::unique_ptr<Shader> shader;
+    std::unique_ptr<Camera> camera;
+
+    std::vector<std::shared_ptr<Mesh>> meshes;
 
     bool init();
-    void uploadMesh(Mesh& m);
-    void render(const Scene& scene);
+    void uploadMesh(const std::shared_ptr<Mesh>& m);
+    void render();
     void shutdown();
 };
