@@ -41,8 +41,12 @@ void Renderer::render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     if (shader) shader->use();
- 
+    if (camera && shader) {
+        shader->setMat4("view", camera->getView());
+        shader->setMat4("projection", camera->getProjection());
+    }
     for (const auto& mesh : meshes) {
+        if (shader) shader->setMat4("model", glm::mat4(1.0f));
         mesh->draw();
     }
 
@@ -56,4 +60,30 @@ void Renderer::shutdown() {
         window = nullptr;
     }
     glfwTerminate();
+}
+
+// width/height
+int Renderer::getHeight() const { return height; }
+int Renderer::getWidth() const { return width; }
+void Renderer::setHeight(int h) { height = h; }
+void Renderer::setWidth(int w) { width = w; }
+
+//  window
+GLFWwindow* Renderer::getWindow() const { return window; }
+void Renderer::setWindow(GLFWwindow* win) { window = win; }
+
+// Shader
+Shader* Renderer::getShader() const { return shader.get(); }
+void Renderer::setShader(std::unique_ptr<Shader> s) { shader = std::move(s); }
+
+// Camera
+Camera* Renderer::getCamera() const { return camera.get(); }
+void Renderer::setCamera(std::unique_ptr<Camera> c) { camera = std::move(c); }
+
+// Meshes
+const std::vector<std::shared_ptr<Mesh>>& Renderer::getMeshes() const { return meshes; }
+void Renderer::setMeshes(const std::vector<std::shared_ptr<Mesh>>& m) { meshes = m; }
+
+Renderer::~Renderer() {
+    shutdown();
 }

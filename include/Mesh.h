@@ -12,6 +12,7 @@ struct Vertex {
 class Mesh {
 public:
     Mesh(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices);
+    ~Mesh();
 
     void draw() const;
 
@@ -21,5 +22,4 @@ private:
     unsigned int vbo, ebo, vao;
 
     void setupMesh();
-
 };

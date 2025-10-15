@@ -81,3 +81,7 @@ void Shader::checkCompileErrors(unsigned int shader, std::string type) {
 		}
 	}
 }
+
+Shader::~Shader() {
+    glDeleteProgram(id);
+}

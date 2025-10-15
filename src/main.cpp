@@ -18,31 +18,43 @@ const unsigned int SCR_HEIGHT = 600;
 void processInput(GLFWwindow *window);
 
 int main() {
-    Renderer renderer;
-    renderer.width = SCR_WIDTH;
-    renderer.height = SCR_HEIGHT;
-    if (!renderer.init()) {
+    
+    Renderer* renderer = new Renderer();
+    renderer->setWidth(SCR_WIDTH);
+    renderer->setHeight(SCR_HEIGHT);
+    if (!renderer->init()) {
         return -1;
     }
 
-    renderer.shader = std::make_unique<Shader>("../shaders/vertex.shader", "../shaders/fragment.shader");
-    renderer.camera = std::make_unique<Camera>();
+    renderer->setShader(std::make_unique<Shader>("../shaders/vertex.shader", "../shaders/fragment.shader"));
+    renderer->setCamera(std::make_unique<Camera>(
+        glm::vec3(0.0f, 0.0f, 3.0f),
+        glm::vec3(0.0f, 1.0f, 0.0f), 
+        -90.0f,                      
+        0.0f,                      
+        45.0f,                      
+        float(SCR_WIDTH) / SCR_HEIGHT, 
+        0.1f,
+        100.0f                      
+    ));
 
     std::vector<Vertex> vertices = {
         {{0.0f,  0.5f, 0.0f}, {0.5f, 1.0f}},
         {{0.5f, -0.5f, 0.0f}, {1.0f, 0.0f}},
         {{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f}}
     };
+    
     std::vector<unsigned int> indices = { 0, 1, 2 };
     auto triangle = std::make_shared<Mesh>(vertices, indices);
-    renderer.uploadMesh(triangle);
+    renderer->uploadMesh(triangle);
 
 
-    while (!glfwWindowShouldClose(renderer.window)) {
-        processInput(renderer.window);
-        renderer.render();
+    while (!glfwWindowShouldClose(renderer->getWindow())) {
+        processInput(renderer->getWindow());
+        renderer->render();
     }
-    renderer.shutdown();
+    renderer->shutdown();
+    delete renderer;
     return 0;
 }
 

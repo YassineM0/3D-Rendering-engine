@@ -9,17 +9,41 @@
 #include "Shader.h"
 
 class Renderer {
+
 public:
-    GLFWwindow* window = nullptr;
-    int width = 1280, height = 720;
-
-    std::unique_ptr<Shader> shader;
-    std::unique_ptr<Camera> camera;
-
-    std::vector<std::shared_ptr<Mesh>> meshes;
-
+    ~Renderer();
     bool init();
     void uploadMesh(const std::shared_ptr<Mesh>& m);
     void render();
     void shutdown();
+
+    // Window
+    GLFWwindow* getWindow() const;
+    void setWindow(GLFWwindow* win);
+
+    // Width/Height
+    int getWidth() const;
+    int getHeight() const;
+    void setWidth(int w);
+    void setHeight(int h);
+
+    // Shader
+    Shader* getShader() const;
+    void setShader(std::unique_ptr<Shader> s);
+
+    // Camera
+    Camera* getCamera() const;
+    void setCamera(std::unique_ptr<Camera> c);
+
+    // Meshes
+    const std::vector<std::shared_ptr<Mesh>>& getMeshes() const;
+    void setMeshes(const std::vector<std::shared_ptr<Mesh>>& m);
+    
+
+private:
+    GLFWwindow* window = nullptr;
+    int width = 1280, height = 720;
+    std::unique_ptr<Shader> shader;
+    std::unique_ptr<Camera> camera;
+    std::vector<std::shared_ptr<Mesh>> meshes;
 };

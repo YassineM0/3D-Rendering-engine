@@ -26,6 +26,7 @@ add_executable(3D_Rendering_Engine
     src/Mesh.cpp
     src/Renderer.cpp
     src/Shader.cpp
+    src/Camera.cpp
     third_party/glad/src/glad.c
 )
 
