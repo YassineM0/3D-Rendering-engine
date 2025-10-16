@@ -12,10 +12,12 @@
 #include <vector>
 #include <memory>
 
+
+
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
-void processInput(GLFWwindow *window);
+void processInput(GLFWwindow *window, Camera* camera, float deltaTime);
 
 int main() {
     
@@ -26,7 +28,7 @@ int main() {
         return -1;
     }
 
-    renderer->setShader(std::make_unique<Shader>("../shaders/vertex.shader", "../shaders/fragment.shader"));
+    renderer->setShader(std::make_unique<Shader>("../shaders/vertex.glsl", "../shaders/fragment.glsl"));
     renderer->setCamera(std::make_unique<Camera>(
         glm::vec3(0.0f, 0.0f, 3.0f),
         glm::vec3(0.0f, 1.0f, 0.0f), 
@@ -39,27 +41,70 @@ int main() {
     ));
 
     std::vector<Vertex> vertices = {
-        {{0.0f,  0.5f, 0.0f}, {0.5f, 1.0f}},
+        {{-0.5f,  0.5f, 0.0f}, {0.5f, 1.0f}},
         {{0.5f, -0.5f, 0.0f}, {1.0f, 0.0f}},
-        {{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f}}
-    };
-    
-    std::vector<unsigned int> indices = { 0, 1, 2 };
-    auto triangle = std::make_shared<Mesh>(vertices, indices);
-    renderer->uploadMesh(triangle);
+        {{0.5f, 0.5f, 0.0f}, {1.0f, 0.0f}},
+        {{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f}},
 
+        {{-0.5f,  0.5f, -0.5f}, {0.5f, 1.0f}},
+        {{0.5f, -0.5f, -0.5f}, {1.0f, 0.0f}},
+        {{0.5f, 0.5f, -0.5f}, {1.0f, 0.0f}},
+        {{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
+    };
+
+    std::vector<unsigned int> indices = { 
+        0, 1, 3,
+        0, 1, 2,
+
+        0, 2, 4,
+        0, 2, 6,
+
+        4, 5, 7,
+        4, 5, 6,
+
+        1, 3, 5,
+        1, 3, 7,
+
+        2, 6, 7,
+        2, 6, 5,
+
+        0, 4, 7,
+        0, 4, 3
+
+    
+    };
+    // auto cube = std::make_shared<Mesh>(vertices, indices);
+    // renderer->uploadMesh(cube);
+
+    auto stpBoody = Mesh::loadSTEP("../boxy_with_flatness.stp");
+    renderer->uploadMesh(stpBoody);
+
+    float lastFrame = 0.0f;
 
     while (!glfwWindowShouldClose(renderer->getWindow())) {
-        processInput(renderer->getWindow());
-        renderer->render();
+        float currentFrame = glfwGetTime();
+        float deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+
+        processInput(renderer->getWindow(), renderer->getCamera(), deltaTime);
+        renderer->render(deltaTime);
     }
     renderer->shutdown();
     delete renderer;
     return 0;
 }
 
-void processInput(GLFWwindow *window)
+void processInput(GLFWwindow *window, Camera* camera, float deltaTime)
 {
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
+
+    if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        camera->processKeyboard(FORWARD, deltaTime);
+    if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        camera->processKeyboard(BACKWARD, deltaTime);
+    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        camera->processKeyboard(LEFT, deltaTime);
+    if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        camera->processKeyboard(RIGHT, deltaTime);
 }

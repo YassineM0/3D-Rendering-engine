@@ -22,6 +22,7 @@ public:
         float zfar = 100.0f
     );
 
+    glm::mat4 getModel() const;
     glm::mat4 getView() const;
     glm::mat4 getProjection() const;
 

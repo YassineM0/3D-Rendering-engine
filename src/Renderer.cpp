@@ -1,5 +1,7 @@
 #include "Renderer.h"
 #include <iostream>
+#include <glm/gtc/matrix_transform.hpp>
+
 
 bool Renderer::init() {
     if (!glfwInit()) {
@@ -34,7 +36,7 @@ void Renderer::uploadMesh(const std::shared_ptr<Mesh>& m) {
     meshes.push_back(m);
 }
 
-void Renderer::render() {
+void Renderer::render(float deltaTime) {
     if (!window) return;
 
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -42,11 +44,18 @@ void Renderer::render() {
 
     if (shader) shader->use();
     if (camera && shader) {
+        shader->setMat4("model", camera->getModel());
         shader->setMat4("view", camera->getView());
         shader->setMat4("projection", camera->getProjection());
     }
     for (const auto& mesh : meshes) {
-        if (shader) shader->setMat4("model", glm::mat4(1.0f));
+        glm ::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(0.03f));
+        model = model*rotation;
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, -20.0f));
+        rotation = glm::rotate(rotation, deltaTime*3.14f, glm::vec3(0.5f, 0.5f, 0.0f));
+
+        
+        shader->setMat4("model", model);
         mesh->draw();
     }
 

@@ -14,6 +14,14 @@ Camera::Camera(
     updateCameraVectors();
 }
 
+glm::mat4 Camera::getModel() const {
+    glm::mat4 model = glm::mat4(1.0f);
+    model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));   
+    model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f)); 
+    model = glm::scale(model, glm::vec3(1.0f));                  
+    return model;
+}
+
 glm::mat4 Camera::getView() const {
     return glm::lookAt(position, position + front, up);
 }

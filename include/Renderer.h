@@ -14,7 +14,7 @@ public:
     ~Renderer();
     bool init();
     void uploadMesh(const std::shared_ptr<Mesh>& m);
-    void render();
+    void render(float deltatime);
     void shutdown();
 
     // Window
@@ -46,4 +46,6 @@ private:
     std::unique_ptr<Shader> shader;
     std::unique_ptr<Camera> camera;
     std::vector<std::shared_ptr<Mesh>> meshes;
+    glm::mat4 rotation = glm::mat4(1.0f);
+
 };

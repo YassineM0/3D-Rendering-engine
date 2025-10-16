@@ -19,10 +19,10 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 		std::stringstream vShaderStream, fShaderStream;
 		vShaderStream << vShaderFile.rdbuf();
 		fShaderStream << fShaderFile.rdbuf();
-		vShaderFile.close();
-		fShaderFile.close();
 		vertexCode = vShaderStream.str();
 		fragmentCode = fShaderStream.str();
+		vShaderFile.close();
+		fShaderFile.close();
 	} catch (std::ifstream::failure& e) {
 		std::cout << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ: " << e.what() << std::endl;
 	}

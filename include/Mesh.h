@@ -3,6 +3,8 @@
 #include <vector>
 #include <cstdint>
 #include <glm/glm.hpp>
+#include <string>
+#include <memory>
 
 struct Vertex {
     glm::vec3 position; 
@@ -15,6 +17,8 @@ public:
     ~Mesh();
 
     void draw() const;
+
+    static std::shared_ptr<Mesh> loadSTEP(const std::string& filepath);
 
 private:
     std::vector<Vertex> vertices;
