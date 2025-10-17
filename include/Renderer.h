@@ -11,7 +11,6 @@
 class Renderer {
 
 public:
-    ~Renderer();
     bool init();
     void uploadMesh(const std::shared_ptr<Mesh>& m);
     void render(float deltatime);
@@ -38,6 +37,8 @@ public:
     // Meshes
     const std::vector<std::shared_ptr<Mesh>>& getMeshes() const;
     void setMeshes(const std::vector<std::shared_ptr<Mesh>>& m);
+
+    ~Renderer();
     
 
 private:

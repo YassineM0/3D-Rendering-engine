@@ -42,6 +42,9 @@ public:
     float getZNear() const;
     float getZFar() const;
 
+    ~Camera() = default;
+
+
 private:
     glm::vec3 position;
     glm::vec3 front;

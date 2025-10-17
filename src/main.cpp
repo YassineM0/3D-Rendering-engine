@@ -76,7 +76,7 @@ int main() {
     // auto cube = std::make_shared<Mesh>(vertices, indices);
     // renderer->uploadMesh(cube);
 
-    auto stpBoody = Mesh::loadSTEP("../boxy_with_flatness.stp");
+    auto stpBoody = Mesh::loadSTEP("../as1-ac-214.stp");
     renderer->uploadMesh(stpBoody);
 
     float lastFrame = 0.0f;
@@ -89,7 +89,6 @@ int main() {
         processInput(renderer->getWindow(), renderer->getCamera(), deltaTime);
         renderer->render(deltaTime);
     }
-    renderer->shutdown();
     delete renderer;
     return 0;
 }
