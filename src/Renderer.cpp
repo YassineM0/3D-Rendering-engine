@@ -49,10 +49,10 @@ void Renderer::render(float deltaTime) {
         shader->setMat4("projection", camera->getProjection());
     }
     for (const auto& mesh : meshes) {
-        glm ::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(0.03f));
+        glm::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(0.03f));
         model = model*rotation;
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, -20.0f));
-        rotation = glm::rotate(rotation, deltaTime*3.14f, glm::vec3(0.5f, 0.5f, 0.0f));
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+        rotation = glm::rotate(rotation, deltaTime*3.14f, glm::vec3(0.0f, 0.0f, 0.3f));
 
         
         shader->setMat4("model", model);

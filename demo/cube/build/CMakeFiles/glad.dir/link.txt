@@ -1,0 +1,2 @@
+/usr/bin/ar qc libglad.a "CMakeFiles/glad.dir/mnt/c/Users/yassi/Desktop/brikolat/3D-Rendering-engine/third_party/glad/src/glad.c.o"
+/usr/bin/ranlib libglad.a

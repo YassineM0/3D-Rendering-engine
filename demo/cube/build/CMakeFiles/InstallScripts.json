@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/mnt/c/Users/yassi/Desktop/brikolat/3D-Rendering-engine/demo/cube/build/cmake_install.cmake",
+		"/mnt/c/Users/yassi/Desktop/brikolat/3D-Rendering-engine/demo/cube/build/glfw_build/cmake_install.cmake",
+		"/mnt/c/Users/yassi/Desktop/brikolat/3D-Rendering-engine/demo/cube/build/glfw_build/src/cmake_install.cmake",
+		"/mnt/c/Users/yassi/Desktop/brikolat/3D-Rendering-engine/demo/cube/build/glfw_build/docs/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

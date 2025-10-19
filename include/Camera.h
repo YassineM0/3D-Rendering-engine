@@ -19,12 +19,19 @@ public:
         float fov = 45.0f,
         float aspect = 4.0f/3.0f,
         float znear = 0.1f,
-        float zfar = 100.0f
+        float zfar = 100.0f,
+        glm::mat4 model = glm::mat4(1.0f),
+        glm::mat4 view = glm::mat4(1.0f),
+        glm::mat4 projection = glm::mat4(1.0f)
     );
 
     glm::mat4 getModel() const;
     glm::mat4 getView() const;
     glm::mat4 getProjection() const;
+
+    void setModel(const glm::mat4& model);
+    void setView(const glm::mat4& view);
+    void setProjection(const glm::mat4& projection);
 
     void processKeyboard(Camera_Movement direction, float deltaTime);
     void processMouseMovement(float xoffset, float yoffset, bool constrainPitch = true);
@@ -51,6 +58,10 @@ private:
     glm::vec3 up;
     glm::vec3 right;
     glm::vec3 worldUp;
+
+    glm::mat4 model;
+    glm::mat4 view;
+    glm::mat4 projection;
 
     float yaw;
     float pitch;

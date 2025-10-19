@@ -28,7 +28,7 @@ int main() {
         return -1;
     }
 
-    renderer->setShader(std::make_unique<Shader>("../shaders/vertex.glsl", "../shaders/fragment.glsl"));
+    renderer->setShader(std::make_unique<Shader>("/../shaders/vertex.glsl", "../shaders/fragment.glsl"));
     renderer->setCamera(std::make_unique<Camera>(
         glm::vec3(0.0f, 0.0f, 3.0f),
         glm::vec3(0.0f, 1.0f, 0.0f), 
@@ -37,47 +37,15 @@ int main() {
         45.0f,                      
         float(SCR_WIDTH) / SCR_HEIGHT, 
         0.1f,
-        100.0f                      
+        100.0f,
+        glm::mat4(1.0f),
+        glm::mat4(1.0f),
+        glm::mat4(1.0f)                
     ));
 
-    std::vector<Vertex> vertices = {
-        {{-0.5f,  0.5f, 0.0f}, {0.5f, 1.0f}},
-        {{0.5f, -0.5f, 0.0f}, {1.0f, 0.0f}},
-        {{0.5f, 0.5f, 0.0f}, {1.0f, 0.0f}},
-        {{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f}},
 
-        {{-0.5f,  0.5f, -0.5f}, {0.5f, 1.0f}},
-        {{0.5f, -0.5f, -0.5f}, {1.0f, 0.0f}},
-        {{0.5f, 0.5f, -0.5f}, {1.0f, 0.0f}},
-        {{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
-    };
-
-    std::vector<unsigned int> indices = { 
-        0, 1, 3,
-        0, 1, 2,
-
-        0, 2, 4,
-        0, 2, 6,
-
-        4, 5, 7,
-        4, 5, 6,
-
-        1, 3, 5,
-        1, 3, 7,
-
-        2, 6, 7,
-        2, 6, 5,
-
-        0, 4, 7,
-        0, 4, 3
-
-    
-    };
-    // auto cube = std::make_shared<Mesh>(vertices, indices);
-    // renderer->uploadMesh(cube);
-
-    auto stpBoody = Mesh::loadSTEP("../as1-ac-214.stp");
-    renderer->uploadMesh(stpBoody);
+    auto stpBody = Mesh::loadSTEP("../as1-ac-214.stp");
+    renderer->uploadMesh(stpBody);
 
     float lastFrame = 0.0f;
 
@@ -89,6 +57,8 @@ int main() {
         processInput(renderer->getWindow(), renderer->getCamera(), deltaTime);
         renderer->render(deltaTime);
     }
+
+
     delete renderer;
     return 0;
 }

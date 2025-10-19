@@ -9,8 +9,11 @@ Camera::Camera(
     float fov,
     float aspect,
     float znear,
-    float zfar
-) : position(position), worldUp(up), yaw(yaw), pitch(pitch), fov(fov), aspect(aspect), znear(znear), zfar(zfar) {
+    float zfar,
+    glm::mat4 model,
+    glm::mat4 view,
+    glm::mat4 projection
+) : position(position), worldUp(up), yaw(yaw), pitch(pitch), fov(fov), aspect(aspect), znear(znear), zfar(zfar), model(model), view(view), projection(projection) {
     updateCameraVectors();
 }
 
@@ -75,6 +78,16 @@ void Camera::updateCameraVectors() {
     front = glm::normalize(frontVec);
     right = glm::normalize(glm::cross(front, worldUp));
     up    = glm::normalize(glm::cross(right, front));
+}
+
+void Camera::setModel(const glm::mat4& model) {
+    this->model = model;
+}
+void Camera::setView(const glm::mat4& view) {
+    this->view = view;
+}
+void Camera::setProjection(const glm::mat4& projection) {
+    this->projection = projection;
 }
 
 glm::vec3 Camera::getPosition() const { return position; }
