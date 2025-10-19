@@ -28,9 +28,9 @@ int main() {
         return -1;
     }
 
-    renderer->setShader(std::make_unique<Shader>("/../shaders/vertex.glsl", "../shaders/fragment.glsl"));
+    renderer->setShader(std::make_unique<Shader>("../shaders/vertex.glsl", "../shaders/fragment.glsl"));
     renderer->setCamera(std::make_unique<Camera>(
-        glm::vec3(0.0f, 0.0f, 3.0f),
+        glm::vec3(0.0f, 0.0f, 11.0f),
         glm::vec3(0.0f, 1.0f, 0.0f), 
         -90.0f,                      
         0.0f,                      
@@ -44,7 +44,7 @@ int main() {
     ));
 
 
-    auto stpBody = Mesh::loadSTEP("../as1-ac-214.stp");
+    auto stpBody = Mesh::loadSTEP("../sample_step_files/as1-ac-214.stp");
     renderer->uploadMesh(stpBody);
 
     float lastFrame = 0.0f;

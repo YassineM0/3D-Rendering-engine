@@ -47,6 +47,6 @@ target_link_libraries(3D_Rendering_Engine PRIVATE
     TKMesh  
 )
 
-add_subdirectory(demo)
+
 
 
