@@ -1,5 +1,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 #include "Renderer.h"
 #include "Shader.h"
@@ -26,12 +28,8 @@ int main() {
 
 
     renderer->setShader(std::make_unique<Shader>("../shaders/vertex.glsl", "../shaders/fragment.glsl"));
-    
-    glm::vec3 lightColor(1.0f, 1.0f, 1.0f);
-    glm::vec3 toyColor(1.0f, 0.5f, 0.31f);
 
-    renderer->getShader()->setVec3("lightColor", lightColor);
-    renderer->getShader()->setVec3("objectColor", toyColor);
+
     renderer->setCamera(std::make_unique<Camera>(
         glm::vec3(0.0f, 0.0f, 0.1f),
         glm::vec3(0.0f, 1.0f, 0.0f), 
@@ -92,6 +90,13 @@ int main() {
 
 
     std::shared_ptr<Mesh> cube = std::make_shared<Mesh>(vertices, indices);
+
+    glm::mat4 model = glm::mat4(1.0f);
+    model = glm::translate(model, glm::vec3(0.0f, 0.0f, -5.0f));  
+    model = glm::rotate(model, glm::radians(30.0f), glm::vec3(1.0f, 1.0f, 0.0f)); 
+    model = glm::scale(model, glm::vec3(0.5f));
+    cube->setModel(model);
+
     renderer->uploadMesh(cube);
 
     float lastFrame = 0.0f;

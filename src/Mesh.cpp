@@ -90,17 +90,15 @@ std::shared_ptr<Mesh> Mesh::loadSTEP(const std::string& filepath) {
         Handle(Poly_Triangulation) tri = BRep_Tool::Triangulation(face, loc);
 
         if (!tri.IsNull()) {
-            // Vertices: initialize normal to zero so we can accumulate face normals later
             for (int i = 1; i <= tri->NbNodes(); i++) {
                 gp_Pnt p = tri->Node(i).Transformed(loc.Transformation());
                 Vertex v;
                 v.position = glm::vec3(float(p.X()), float(p.Y()), float(p.Z()));
-                v.normal   = glm::vec3(0.0f, 0.0f, 0.0f); // placeholder
-                v.uv       = glm::vec2(0.0f, 0.0f);       // no UVs available from STEP; set to 0
+                v.normal   = glm::vec3(0.0f, 0.0f, 0.0f); 
+                v.uv       = glm::vec2(0.0f, 0.0f);       
                 vertices.push_back(v);
             }
 
-            // Triangles (note: OpenCASCADE indices are 1-based)
             for (int i = 1; i <= tri->NbTriangles(); i++) {
                 Poly_Triangle t = tri->Triangle(i);
                 int n1, n2, n3;
@@ -110,7 +108,6 @@ std::shared_ptr<Mesh> Mesh::loadSTEP(const std::string& filepath) {
                 indices.push_back(indexOffset + static_cast<uint32_t>(n3 - 1));
             }
 
-            // advance indexOffset by number of new nodes added for this face
             indexOffset = static_cast<uint32_t>(vertices.size());
         }
     }
@@ -120,7 +117,6 @@ std::shared_ptr<Mesh> Mesh::loadSTEP(const std::string& filepath) {
         return nullptr;
     }
 
-    // --- Compute normals: accumulate face normals into vertex normals ---
     for (size_t i = 0; i + 2 < indices.size(); i += 3) {
         uint32_t ia = indices[i];
         uint32_t ib = indices[i + 1];
@@ -143,13 +139,15 @@ std::shared_ptr<Mesh> Mesh::loadSTEP(const std::string& filepath) {
         }
     }
 
-    // Normalize vertex normals
     for (auto &v : vertices) {
         if (glm::length(v.normal) > 0.0f) v.normal = glm::normalize(v.normal);
-        else v.normal = glm::vec3(0.0f, 1.0f, 0.0f); // fallback normal if isolated vertex
+        else v.normal = glm::vec3(0.0f, 1.0f, 0.0f); 
     }
 
     return std::make_shared<Mesh>(vertices, indices);
 }
 
+glm::mat4 Mesh::getModel() { return model; }
+
+void Mesh::setModel(glm::mat4& m) { model = m; }
 
