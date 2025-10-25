@@ -31,7 +31,7 @@ bool Renderer::init() {
 
     return true;
 }
-
+//...
 void Renderer::uploadMesh(const std::shared_ptr<Mesh>& m) {
     meshes.push_back(m);
 }
@@ -58,6 +58,9 @@ void Renderer::render(float deltaTime) {
         shader->setMat4("model", model);
         mesh->draw();
     }
+    glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+    shader->setVec3("light.position", lightPos);
+    shader->setVec3("viewPos", camera->getPosition());
 
     glfwSwapBuffers(window);
     glfwPollEvents();

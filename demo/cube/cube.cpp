@@ -22,7 +22,16 @@ int main() {
         return -1;
     }
 
-    renderer->setShader(std::make_unique<Shader>("../../../shaders/vertex.glsl", "../../../shaders/fragment.glsl"));
+
+
+
+    renderer->setShader(std::make_unique<Shader>("../shaders/vertex.glsl", "../shaders/fragment.glsl"));
+    
+    glm::vec3 lightColor(1.0f, 1.0f, 1.0f);
+    glm::vec3 toyColor(1.0f, 0.5f, 0.31f);
+
+    renderer->getShader()->setVec3("lightColor", lightColor);
+    renderer->getShader()->setVec3("objectColor", toyColor);
     renderer->setCamera(std::make_unique<Camera>(
         glm::vec3(0.0f, 0.0f, 0.1f),
         glm::vec3(0.0f, 1.0f, 0.0f), 
@@ -39,11 +48,38 @@ int main() {
 
    float s = 0.5f;
     std::vector<Vertex> vertices = {
-        {{-s, -s, -s}, {0.0f, 0.0f}}, {{ s, -s, -s}, {1.0f, 0.0f}},
-        {{ s,  s, -s}, {1.0f, 1.0f}}, {{-s,  s, -s}, {0.0f, 1.0f}},
-        {{-s, -s,  s}, {0.0f, 0.0f}}, {{ s, -s,  s}, {1.0f, 0.0f}},
-        {{ s,  s,  s}, {1.0f, 1.0f}}, {{-s,  s,  s}, {0.0f, 1.0f}}
-    };
+
+        {{-s, -s, -s}, {-1.0f,  0.0f,  0.0f}, {0.0f, 0.0f}},
+        {{-s, -s,  s}, {-1.0f,  0.0f,  0.0f}, {1.0f, 0.0f}},
+        {{-s,  s,  s}, {-1.0f,  0.0f,  0.0f}, {1.0f, 1.0f}},
+        {{-s,  s, -s}, {-1.0f,  0.0f,  0.0f}, {0.0f, 1.0f}},
+
+        {{ s, -s, -s}, {1.0f,  0.0f,  0.0f}, {0.0f, 0.0f}},
+        {{ s, -s,  s}, {1.0f,  0.0f,  0.0f}, {1.0f, 0.0f}},
+        {{ s,  s,  s}, {1.0f,  0.0f,  0.0f}, {1.0f, 1.0f}},
+        {{ s,  s, -s}, {1.0f,  0.0f,  0.0f}, {0.0f, 1.0f}},
+
+        {{-s, -s, -s}, {0.0f, -1.0f,  0.0f}, {0.0f, 0.0f}},
+        {{ s, -s, -s}, {0.0f, -1.0f,  0.0f}, {1.0f, 0.0f}},
+        {{ s, -s,  s}, {0.0f, -1.0f,  0.0f}, {1.0f, 1.0f}},
+        {{-s, -s,  s}, {0.0f, -1.0f,  0.0f}, {0.0f, 1.0f}},
+
+        {{-s,  s, -s}, {0.0f,  1.0f,  0.0f}, {0.0f, 0.0f}},
+        {{ s,  s, -s}, {0.0f,  1.0f,  0.0f}, {1.0f, 0.0f}},
+        {{ s,  s,  s}, {0.0f,  1.0f,  0.0f}, {1.0f, 1.0f}},
+        {{-s,  s,  s}, {0.0f,  1.0f,  0.0f}, {0.0f, 1.0f}},
+
+        {{-s, -s, -s}, {0.0f,  0.0f, -1.0f}, {0.0f, 0.0f}},
+        {{ s, -s, -s}, {0.0f,  0.0f, -1.0f}, {1.0f, 0.0f}},
+        {{ s,  s, -s}, {0.0f,  0.0f, -1.0f}, {1.0f, 1.0f}},
+        {{-s,  s, -s}, {0.0f,  0.0f, -1.0f}, {0.0f, 1.0f}},
+
+        {{-s, -s,  s}, {0.0f,  0.0f,  1.0f}, {0.0f, 0.0f}},
+        {{ s, -s,  s}, {0.0f,  0.0f,  1.0f}, {1.0f, 0.0f}},
+        {{ s,  s,  s}, {0.0f,  0.0f,  1.0f}, {1.0f, 1.0f}},
+        {{-s,  s,  s}, {0.0f,  0.0f,  1.0f}, {0.0f, 1.0f}},
+};
+
 
     std::vector<unsigned int> indices = {
         0, 1, 2, 2, 3, 0,

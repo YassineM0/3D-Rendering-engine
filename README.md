@@ -41,8 +41,11 @@ cmake --build .
 ```bash
 cd demos
 
+
 #cube demo
 cd cube
+
+mkdir build
 
 cd build
 
@@ -69,7 +72,12 @@ This renderer supports **loading and visualizing any STEP (.stp/.step) 3D model*
 >> if object too big or too small adjust camera position in constructor or move the camera using (Q, W, S, D) buttons or adjust scaling in Renderer::render()
 
 ```bash
-cd demos
+
+mkdir build
+
+cd build
+
+cd
 
 # Generate build files with CMake
 cmake ..
@@ -93,6 +101,7 @@ cmake --build .
 | OpenGL Loader | [GLAD](https://glad.dav1d.de/) |
 | Math Library | [GLM](https://github.com/g-truc/glm) |
 | Image Loading | [stb_image.h](https://github.com/nothings/stb) |
+| Step Modeling | [OpenCascade](https://dev.opencascade.org/release) |
 | File Format | STEP (.stp) support |
 | Shaders | GLSL |
 
